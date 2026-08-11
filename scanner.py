@@ -73,10 +73,10 @@ def check_rule_4(snap: Dict) -> Tuple[bool, str]:
 
 
 def check_rule_5(history: List[Dict], snap: Dict) -> Tuple[bool, str]:
-    """今日成交量 / 近5日均量 ∈ [1.2, 2]"""
+    """今日成交量 / 近5日均量 ∈ [1.2, 2]。两侧统一按「股」比较。"""
     if len(history) < 5:
         return False, "量能数据不足"
-    today_vol = snap["volume_hand"] * 100  # 手 → 股
+    today_vol = snap["volume_shares"]  # 已在数据层归一化为股
     avg5 = sum(h["volume"] for h in history[-5:]) / 5
     if avg5 <= 0:
         return False, "均量为0"
@@ -99,10 +99,10 @@ def check_rule_6(history: List[Dict], snap: Dict) -> Tuple[bool, str]:
 
 
 def _avg_price(row: Dict) -> float:
-    """从分时数据算均价。腾讯 cum_vol 单位是「手」，1 手 = 100 股"""
-    if row["cum_vol"] <= 0 or row["cum_amt"] <= 0:
+    """从分时数据算均价 (VWAP)。cum_vol_shares 已在数据层归一化为「股」。"""
+    if row["cum_vol_shares"] <= 0 or row["cum_amt"] <= 0:
         return row["price"]
-    return row["cum_amt"] / (row["cum_vol"] * 100)
+    return row["cum_amt"] / row["cum_vol_shares"]
 
 
 def check_rule_7(minute: List[Dict], index_minute: List[Dict]) -> Tuple[bool, str]:

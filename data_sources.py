@@ -82,6 +82,16 @@ def _safe_float(s: str) -> float:
         return 0.0
 
 
+def _vol_multiplier(prefixed: str) -> int:
+    """腾讯 volume 字段单位换算系数（→ 股）。
+    主板/创业板/北交所：字段是「手」，需 ×100；
+    科创板 (sh688/sh689)：字段已是「股」，×1。
+    验证方式：cum_amt / (vol × 系数) ≈ 报价。"""
+    if prefixed.startswith(("sh688", "sh689")):
+        return 1
+    return 100
+
+
 # ==================== 通用股票池 ====================
 
 import json as _json
@@ -170,6 +180,7 @@ def _parse_tencent_line(line: str) -> Optional[Dict[str, Any]]:
     if len(fields) < 50:
         return None
     try:
+        vol_shares = _safe_float(fields[TX["volume_hand"]]) * _vol_multiplier(prefixed)
         return {
             "prefixed": prefixed,
             "code": fields[TX["code"]],
@@ -180,7 +191,7 @@ def _parse_tencent_line(line: str) -> Optional[Dict[str, Any]]:
             "high_day": _safe_float(fields[TX["high_day"]]),
             "low_day": _safe_float(fields[TX["low_day"]]),
             "pct_change": _safe_float(fields[TX["pct_change"]]),
-            "volume_hand": _safe_float(fields[TX["volume_hand"]]),
+            "volume_shares": vol_shares,  # 已归一化为「股」
             "amount_wan": _safe_float(fields[TX["amount_wan"]]),
             "turnover_rate": _safe_float(fields[TX["turnover_rate"]]),
             "float_mv_yi": _safe_float(fields[TX["float_mv_yi"]]),
@@ -226,8 +237,10 @@ def fetch_snapshot_batch(codes: List[str], batch_size: int = 50, retry: int = 2)
 # ==================== 腾讯分时数据 ====================
 
 def fetch_minute(code: str, retry: int = 2) -> List[Dict[str, Any]]:
-    """获取当日1分钟数据，返回 [{'time':'HHMM', 'price':float, 'cum_vol':int, 'cum_amt':float}, ...]"""
+    """获取当日1分钟数据，返回 [{'time':'HHMM', 'price':float, 'cum_vol_shares':int, 'cum_amt':float}, ...]
+    cum_vol_shares 已按板块归一化为「股」。"""
     prefixed = _prefix(code)
+    mult = _vol_multiplier(prefixed)
     url = TENCENT_MINUTE_URL.format(code=prefixed)
     for attempt in range(retry + 1):
         try:
@@ -244,7 +257,7 @@ def fetch_minute(code: str, retry: int = 2) -> List[Dict[str, Any]]:
                 out.append({
                     "time": parts[0],
                     "price": _safe_float(parts[1]),
-                    "cum_vol": _safe_float(parts[2]),
+                    "cum_vol_shares": _safe_float(parts[2]) * mult,
                     "cum_amt": _safe_float(parts[3]) if len(parts) > 3 else 0.0,
                 })
             return out
