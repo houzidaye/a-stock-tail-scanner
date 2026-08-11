@@ -49,8 +49,12 @@ TENCENT_MINUTE_URL = "http://web.ifzq.gtimg.cn/appstock/app/minute/query?code={c
 # ==================== 通用工具 ====================
 
 def _prefix(code: str) -> str:
-    """把纯代码转成腾讯格式：sh600xxx / sz00xxxx / sz30xxxx / bj8xxxxx"""
-    code = str(code).zfill(6)
+    """把纯代码转成腾讯格式：sh600xxx / sz00xxxx / sz30xxxx / bj8xxxxx。
+    已带前缀（sh/sz/bj）的代码直接原样返回。"""
+    code = str(code).strip()
+    if code[:2] in ("sh", "sz", "bj"):
+        return code
+    code = code.zfill(6)
     if code.startswith(("60", "68", "51", "58")):
         return "sh" + code
     if code.startswith(("00", "30", "20")):

@@ -29,8 +29,9 @@ RULE_PARAMS = {
     "vol_expansion_min": 1.2,
     "vol_expansion_max": 2.0,
     "limitup_lookback": 20,
-    "tail_new_high_after": "1445",  # 14:45 之后
-    "intraday_below_avg_tolerance_min": 3,  # 允许最多3分钟破均价线
+    "intraday_below_avg_tolerance_min": 1,  # 允许最多1分钟瞬时破均价
+    "rs_dominance_ratio": 0.9,              # RS>1的分钟占比阈值
+    "index_code": "sh000001",               # 大盘基准：上证指数
 }
 
 
@@ -104,36 +105,47 @@ def _avg_price(row: Dict) -> float:
     return row["cum_amt"] / (row["cum_vol"] * 100)
 
 
-def check_rule_7(minute: List[Dict]) -> Tuple[bool, str]:
-    """分时全天在均价线上方（允许 <= 3 分钟破位）"""
+def check_rule_7(minute: List[Dict], index_minute: List[Dict]) -> Tuple[bool, str]:
+    """A: 分时价全程 >= 均价（≤1分钟瞬破容错）
+       B: 相对上证 RS > 1 的分钟占比 >= 90%（走势强于大盘）
+       两条同时满足才 pass。"""
     if len(minute) < 30:
         return False, "分时数据不足"
-    below = sum(1 for row in minute if row["price"] < _avg_price(row))
-    ok = below <= RULE_PARAMS["intraday_below_avg_tolerance_min"]
-    return ok, f"分时{'强势' if ok else f'弱势({below}分钟破均价)'}"
+
+    below = sum(1 for r in minute if r["price"] < _avg_price(r))
+    a_ok = below <= RULE_PARAMS["intraday_below_avg_tolerance_min"]
+
+    if not index_minute:
+        return False, "指数分时缺失"
+
+    stock_open = minute[0]["price"]
+    index_open = index_minute[0]["price"]
+    if stock_open <= 0 or index_open <= 0:
+        return False, "开盘价异常"
+
+    idx_map = {r["time"]: r["price"] for r in index_minute}
+    dominant = compared = 0
+    for r in minute:
+        idx_price = idx_map.get(r["time"])
+        if not idx_price:
+            continue
+        rs = (r["price"] / stock_open) / (idx_price / index_open)
+        if rs > 1:
+            dominant += 1
+        compared += 1
+    if compared == 0:
+        return False, "无时点对齐"
+
+    ratio = dominant / compared
+    b_ok = ratio >= RULE_PARAMS["rs_dominance_ratio"]
+
+    ok = a_ok and b_ok
+    a_tag = "守均价" if a_ok else f"破均价{below}min"
+    b_tag = "强于大盘" if b_ok else f"跑赢大盘{ratio*100:.0f}%"
+    return ok, f"{a_tag}/{b_tag}"
 
 
-def check_rule_8(minute: List[Dict]) -> Tuple[bool, str]:
-    """14:45 后创当日新高且不破均价线"""
-    if len(minute) < 30:
-        return False, "尾盘数据不足"
-    cutoff = RULE_PARAMS["tail_new_high_after"]  # '1445'
-    before = [r for r in minute if r["time"] < cutoff]
-    tail = [r for r in minute if r["time"] >= cutoff]
-    if not tail:
-        return False, "尾盘尚未到"
-    max_before = max((r["price"] for r in before), default=0)
-    max_tail = max(r["price"] for r in tail)
-    made_new_high = max_tail > max_before
-    # 检查尾盘阶段是否跌破均价
-    breaks = sum(1 for r in tail if r["price"] < _avg_price(r))
-    not_break = breaks == 0
-    ok = made_new_high and not_break
-    tag = ("创新高" if made_new_high else "未创新高") + "/" + ("守均价" if not_break else "破均价")
-    return ok, f"尾盘{tag}"
-
-
-def check_rule_9(history: List[Dict], code: str) -> Tuple[bool, str]:
+def check_rule_8(history: List[Dict], code: str) -> Tuple[bool, str]:
     """近20日至少1次实体涨停（排除一字板、T字板）"""
     if len(history) < 2:
         return False, "历史数据不足"
@@ -210,11 +222,17 @@ def scan(limit: Optional[int] = None,
     if limit:
         candidates = candidates[:limit]
 
+    # 提前拉一次大盘分时供所有候选共用（rule 7 计算 RS 用）
+    index_code = RULE_PARAMS["index_code"]
+    print(f"[scan] 拉取大盘分时 {index_code}…")
+    index_minute = fetch_minute(index_code)
+    print(f"[scan] 大盘分时 {len(index_minute)} 分钟")
+
     bs_login()
     results: List[ScanResult] = []
     total = len(candidates)
-    # 规则失败计数
-    fail_counts = {f"rule_{i}": 0 for i in range(5, 10)}
+    # 规则失败计数（合并后：5,6,7,8）
+    fail_counts = {f"rule_{i}": 0 for i in range(5, 9)}
     data_missing = {"history": 0, "minute": 0}
 
     try:
@@ -240,27 +258,25 @@ def scan(limit: Optional[int] = None,
 
             r5, m5 = check_rule_5(history, snap)
             r6, m6 = check_rule_6(history, snap)
-            r9, m9 = check_rule_9(history, code)
+            r8, m8 = check_rule_8(history, code)  # 原⑨→⑧：20日实体涨停
 
             minute = fetch_minute(code)
-            r7 = r8 = False
-            m7 = m8 = "分时数据缺失"
+            r7 = False
+            m7 = "分时数据缺失"
             if not minute:
                 data_missing["minute"] += 1
             else:
-                r7, m7 = check_rule_7(minute)
-                r8, m8 = check_rule_8(minute)
+                r7, m7 = check_rule_7(minute, index_minute)
 
-            all_pass = r5 and r6 and r7 and r8 and r9
+            all_pass = r5 and r6 and r7 and r8
             fails = []
             if not r5: fail_counts["rule_5"] += 1; fails.append("⑤")
             if not r6: fail_counts["rule_6"] += 1; fails.append("⑥")
             if not r7: fail_counts["rule_7"] += 1; fails.append("⑦")
             if not r8: fail_counts["rule_8"] += 1; fails.append("⑧")
-            if not r9: fail_counts["rule_9"] += 1; fails.append("⑨")
 
             print(f"  {'✓' if all_pass else '✗'} {code} {name}: "
-                  f"⑤{m5} | ⑥{m6} | ⑦{m7} | ⑧{m8} | ⑨{m9}"
+                  f"⑤{m5} | ⑥{m6} | ⑦{m7} | ⑧{m8}"
                   + (f"  失败于: {','.join(fails)}" if fails else ""))
 
             if diagnostics is not None:
@@ -275,7 +291,6 @@ def scan(limit: Optional[int] = None,
                     "rule_6": {"pass": r6, "msg": m6},
                     "rule_7": {"pass": r7, "msg": m7},
                     "rule_8": {"pass": r8, "msg": m8},
-                    "rule_9": {"pass": r9, "msg": m9},
                     "fail_at": fails,
                 })
 
@@ -283,7 +298,7 @@ def scan(limit: Optional[int] = None,
                 continue
 
             reasons = [f"①{m1}", f"②{m2}", f"③{m3}", f"④{m4}",
-                       f"⑤{m5}", f"⑥{m6}", f"⑨{m9}", f"⑦{m7}", f"⑧{m8}"]
+                       f"⑤{m5}", f"⑥{m6}", f"⑦{m7}", f"⑧{m8}"]
             results.append(ScanResult(
                 code=code,
                 name=name,
