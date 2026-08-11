@@ -80,33 +80,77 @@ def _safe_float(s: str) -> float:
 
 # ==================== 通用股票池 ====================
 
+import json as _json
+import os as _os
 _A_STOCK_UNIVERSE: Optional[List[str]] = None
+_UNIVERSE_CACHE_FILE = _os.path.join(_os.path.dirname(__file__), "docs", "universe_cache.json")
+
+
+def _load_universe_cache() -> Optional[List[str]]:
+    try:
+        with open(_UNIVERSE_CACHE_FILE, "r") as f:
+            data = _json.load(f)
+            codes = data.get("codes", [])
+            if len(codes) > 100:
+                return codes
+    except Exception:
+        pass
+    return None
+
+
+def _save_universe_cache(codes: List[str]) -> None:
+    try:
+        _os.makedirs(_os.path.dirname(_UNIVERSE_CACHE_FILE), exist_ok=True)
+        with open(_UNIVERSE_CACHE_FILE, "w") as f:
+            _json.dump({"codes": codes, "fetched_at": dt.datetime.utcnow().isoformat()}, f)
+    except Exception:
+        pass
+
+
+def _fetch_universe_from_sina(retry: int = 3) -> Optional[List[str]]:
+    import akshare as ak
+    for attempt in range(retry):
+        try:
+            df = ak.stock_zh_a_spot()
+            codes_raw = df["代码"].tolist()
+            cleaned = []
+            for c in codes_raw:
+                c = str(c).strip()
+                if c.startswith(("sh", "sz", "bj")):
+                    cleaned.append(c[2:])
+                else:
+                    cleaned.append(c.zfill(6))
+            codes = [c for c in cleaned if len(c) == 6 and c[0] in "036852469"]
+            if len(codes) > 100:
+                return codes
+        except Exception as e:
+            print(f"[universe] Sina 拉取失败 (attempt {attempt+1}/{retry}): {str(e)[:80]}")
+            time.sleep(2)
+    return None
 
 
 def get_universe() -> List[str]:
-    """获取全部 A股代码列表。使用一个稳定的静态方案：从 Sina 拿全量。
-    返回：['000001', '000002', ...]
-    """
+    """获取全部 A股代码列表。优先在线拉，失败时用磁盘缓存兜底。"""
     global _A_STOCK_UNIVERSE
     if _A_STOCK_UNIVERSE is not None:
         return _A_STOCK_UNIVERSE
 
-    try:
-        import akshare as ak
-        df = ak.stock_zh_a_spot()  # Sina 全市场
-        codes = df["代码"].tolist()
-        # Sina 返回可能是 sz000001 或 bj920000 前缀，也可能纯6位
-        cleaned = []
-        for c in codes:
-            c = str(c).strip()
-            if c.startswith(("sh", "sz", "bj")):
-                cleaned.append(c[2:])
-            else:
-                cleaned.append(c.zfill(6))
-        _A_STOCK_UNIVERSE = [c for c in cleaned if len(c) == 6 and c[0] in "036852469"]
-        return _A_STOCK_UNIVERSE
-    except Exception as e:
-        raise RuntimeError(f"获取股票池失败: {e}")
+    codes = _fetch_universe_from_sina()
+    if codes:
+        _save_universe_cache(codes)
+        _A_STOCK_UNIVERSE = codes
+        return codes
+
+    # 兜底：用磁盘缓存
+    cached = _load_universe_cache()
+    if cached:
+        print(f"[universe] 使用磁盘缓存 {len(cached)} 只")
+        _A_STOCK_UNIVERSE = cached
+        return cached
+
+    raise RuntimeError("获取股票池失败，且无磁盘缓存")
+
+import datetime as dt  # noqa (for cache timestamp)
 
 
 # ==================== 腾讯实时快照 ====================

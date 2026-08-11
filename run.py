@@ -28,8 +28,9 @@ def main() -> int:
     out_file = RESULTS_DIR / f"{date_str}-{time_tag}.json"
 
     print(f"[run] 扫描开始 北京时间 {bj.isoformat()}")
+    diagnostics: list = []
     try:
-        results = scan()
+        results = scan(diagnostics=diagnostics)
     except Exception as e:
         print(f"[run] 扫描失败: {e}")
         results = []
@@ -40,6 +41,7 @@ def main() -> int:
                 "time_tag": time_tag,
                 "error": str(e),
                 "results": [],
+                "diagnostics": diagnostics,
             }, f, ensure_ascii=False, indent=2)
         rebuild_index()
         return 1
@@ -50,6 +52,7 @@ def main() -> int:
         "time_tag": time_tag,
         "count": len(results),
         "results": results,
+        "diagnostics": diagnostics,
     }
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)

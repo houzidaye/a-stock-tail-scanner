@@ -97,17 +97,18 @@ def check_rule_6(history: List[Dict], snap: Dict) -> Tuple[bool, str]:
     return ok, f"MA5={ma5:.2f}/MA10={ma10:.2f}/MA20={ma20:.2f}"
 
 
+def _avg_price(row: Dict) -> float:
+    """从分时数据算均价。腾讯 cum_vol 单位是「手」，1 手 = 100 股"""
+    if row["cum_vol"] <= 0 or row["cum_amt"] <= 0:
+        return row["price"]
+    return row["cum_amt"] / (row["cum_vol"] * 100)
+
+
 def check_rule_7(minute: List[Dict]) -> Tuple[bool, str]:
     """分时全天在均价线上方（允许 <= 3 分钟破位）"""
     if len(minute) < 30:
         return False, "分时数据不足"
-    below = 0
-    for row in minute:
-        if row["cum_vol"] <= 0:
-            continue
-        avg = (row["cum_amt"] / row["cum_vol"]) if row["cum_amt"] > 0 else row["price"]
-        if row["price"] < avg:
-            below += 1
+    below = sum(1 for row in minute if row["price"] < _avg_price(row))
     ok = below <= RULE_PARAMS["intraday_below_avg_tolerance_min"]
     return ok, f"分时{'强势' if ok else f'弱势({below}分钟破均价)'}"
 
@@ -125,13 +126,7 @@ def check_rule_8(minute: List[Dict]) -> Tuple[bool, str]:
     max_tail = max(r["price"] for r in tail)
     made_new_high = max_tail > max_before
     # 检查尾盘阶段是否跌破均价
-    breaks = 0
-    for r in tail:
-        if r["cum_vol"] <= 0:
-            continue
-        avg = r["cum_amt"] / r["cum_vol"] if r["cum_amt"] > 0 else r["price"]
-        if r["price"] < avg:
-            breaks += 1
+    breaks = sum(1 for r in tail if r["price"] < _avg_price(r))
     not_break = breaks == 0
     ok = made_new_high and not_break
     tag = ("创新高" if made_new_high else "未创新高") + "/" + ("守均价" if not_break else "破均价")
@@ -185,8 +180,11 @@ class ScanResult:
 
 
 def scan(limit: Optional[int] = None,
-         progress_cb: Optional[Callable[[int, int, str], None]] = None) -> List[Dict]:
-    """执行完整扫描。"""
+         progress_cb: Optional[Callable[[int, int, str], None]] = None,
+         diagnostics: Optional[List[Dict]] = None) -> List[Dict]:
+    """执行完整扫描。
+    diagnostics: 若传入 list，会填入每只候选的规则详细通过情况（不影响返回值）。
+    """
     print("[scan] 拉取股票池…")
     universe = get_universe()
     print(f"[scan] 股票池 {len(universe)} 只")
@@ -215,55 +213,80 @@ def scan(limit: Optional[int] = None,
     bs_login()
     results: List[ScanResult] = []
     total = len(candidates)
+    # 规则失败计数
+    fail_counts = {f"rule_{i}": 0 for i in range(5, 10)}
+    data_missing = {"history": 0, "minute": 0}
 
     try:
         for idx, snap in enumerate(candidates):
             code = snap["code"]
+            name = snap["name"]
             if progress_cb:
                 progress_cb(idx + 1, total, code)
 
-            reasons: List[str] = []
-            r1, m1 = check_rule_1(snap); reasons.append(f"①{m1}")
-            r2, m2 = check_rule_2(snap); reasons.append(f"②{m2}")
-            r3, m3 = check_rule_3(snap); reasons.append(f"③{m3}")
-            r4, m4 = check_rule_4(snap); reasons.append(f"④{m4}")
+            # 评估全部 9 条规则（不短路，收集诊断）
+            _, m1 = check_rule_1(snap)
+            _, m2 = check_rule_2(snap)
+            _, m3 = check_rule_3(snap)
+            _, m4 = check_rule_4(snap)
 
             history = fetch_history(code, days=40)
             if not history:
+                data_missing["history"] += 1
+                print(f"  ✗ {code} {name}: 历史K线拉取失败")
+                if diagnostics is not None:
+                    diagnostics.append({"code": code, "name": name, "fail_at": "history_fetch"})
                 continue
 
             r5, m5 = check_rule_5(history, snap)
-            if not r5:
-                continue
-            reasons.append(f"⑤{m5}")
-
             r6, m6 = check_rule_6(history, snap)
-            if not r6:
-                continue
-            reasons.append(f"⑥{m6}")
-
             r9, m9 = check_rule_9(history, code)
-            if not r9:
-                continue
-            reasons.append(f"⑨{m9}")
 
             minute = fetch_minute(code)
+            r7 = r8 = False
+            m7 = m8 = "分时数据缺失"
             if not minute:
+                data_missing["minute"] += 1
+            else:
+                r7, m7 = check_rule_7(minute)
+                r8, m8 = check_rule_8(minute)
+
+            all_pass = r5 and r6 and r7 and r8 and r9
+            fails = []
+            if not r5: fail_counts["rule_5"] += 1; fails.append("⑤")
+            if not r6: fail_counts["rule_6"] += 1; fails.append("⑥")
+            if not r7: fail_counts["rule_7"] += 1; fails.append("⑦")
+            if not r8: fail_counts["rule_8"] += 1; fails.append("⑧")
+            if not r9: fail_counts["rule_9"] += 1; fails.append("⑨")
+
+            print(f"  {'✓' if all_pass else '✗'} {code} {name}: "
+                  f"⑤{m5} | ⑥{m6} | ⑦{m7} | ⑧{m8} | ⑨{m9}"
+                  + (f"  失败于: {','.join(fails)}" if fails else ""))
+
+            if diagnostics is not None:
+                diagnostics.append({
+                    "code": code,
+                    "name": name,
+                    "gain_pct": snap["pct_change"],
+                    "volume_ratio": snap["volume_ratio"],
+                    "turnover": snap["turnover_rate"],
+                    "float_mv_yi": snap["float_mv_yi"],
+                    "rule_5": {"pass": r5, "msg": m5},
+                    "rule_6": {"pass": r6, "msg": m6},
+                    "rule_7": {"pass": r7, "msg": m7},
+                    "rule_8": {"pass": r8, "msg": m8},
+                    "rule_9": {"pass": r9, "msg": m9},
+                    "fail_at": fails,
+                })
+
+            if not all_pass:
                 continue
 
-            r7, m7 = check_rule_7(minute)
-            if not r7:
-                continue
-            reasons.append(f"⑦{m7}")
-
-            r8, m8 = check_rule_8(minute)
-            if not r8:
-                continue
-            reasons.append(f"⑧{m8}")
-
+            reasons = [f"①{m1}", f"②{m2}", f"③{m3}", f"④{m4}",
+                       f"⑤{m5}", f"⑥{m6}", f"⑨{m9}", f"⑦{m7}", f"⑧{m8}"]
             results.append(ScanResult(
                 code=code,
-                name=snap["name"],
+                name=name,
                 price=snap["price"],
                 gain_pct=snap["pct_change"],
                 volume_ratio=snap["volume_ratio"],
@@ -273,6 +296,13 @@ def scan(limit: Optional[int] = None,
             ))
     finally:
         bs_logout()
+
+    print(f"\n[scan] 规则失败分布 (共 {total} 只候选):")
+    for k, v in fail_counts.items():
+        rule_num = k.split("_")[1]
+        print(f"  规则{rule_num} 被过滤: {v} 只")
+    print(f"  数据缺失: 历史 {data_missing['history']} 只, 分时 {data_missing['minute']} 只")
+    print(f"[scan] 最终命中: {len(results)} 只")
 
     return [r.to_dict() for r in results]
 
