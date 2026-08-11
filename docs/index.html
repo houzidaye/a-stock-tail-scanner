@@ -26,11 +26,29 @@
   .empty { text-align: center; color: #86868b; padding: 40px; }
   .error { color: #d0021b; background: #fff2f2; padding: 12px; border-radius: 8px; margin-top: 12px; }
   .meta { color: #86868b; font-size: 12px; margin-top: 8px; }
+  .btn-primary { background: #007aff; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 500; }
+  .btn-primary:hover { background: #0066d6; }
+  .btn-primary:disabled { background: #c7c7cc; cursor: not-allowed; }
+  .btn-ghost { padding: 8px 16px; border: 1px solid #d2d2d7; background: #fff; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  .btn-ghost:hover { background: #f5f5f7; }
+  .link { color: #007aff; text-decoration: none; cursor: pointer; font-size: 12px; margin-left: 8px; }
+  .link:hover { text-decoration: underline; }
+  .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; align-items: center; justify-content: center; }
+  .modal-backdrop.show { display: flex; }
+  .modal { background: #fff; border-radius: 14px; padding: 24px; max-width: 480px; width: 90%; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .modal h3 { margin: 0 0 12px; font-size: 17px; }
+  .modal p { font-size: 13px; color: #48484a; margin: 8px 0; line-height: 1.6; }
+  .modal ol { font-size: 13px; color: #48484a; padding-left: 20px; line-height: 1.8; }
+  .modal input { width: 100%; padding: 10px 12px; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 13px; font-family: "SF Mono", Menlo, monospace; box-sizing: border-box; margin: 8px 0; }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1d1d1f; color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); z-index: 200; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  .toast.error { background: #d0021b; }
 </style>
 </head>
 <body>
 <h1>A股尾盘扫描 · 9条规则全满足</h1>
-<div class="sub">每交易日 14:45 & 14:48 北京时间自动扫描 · 数据源 AKShare / 东财 · GitHub Actions 部署</div>
+<div class="sub">每交易日 14:45 & 14:48 北京时间自动扫描 · 数据源 腾讯财经 + Baostock · GitHub Actions 部署</div>
 
 <div class="card">
   <div class="rules">
@@ -50,11 +68,35 @@
   <div class="toolbar">
     <label for="date-select">扫描时点：</label>
     <select id="date-select" onchange="loadSelected()"></select>
-    <button onclick="refresh()" style="padding:8px 16px;border:1px solid #d2d2d7;background:#fff;border-radius:8px;cursor:pointer">刷新</button>
+    <button class="btn-ghost" onclick="refresh()">刷新</button>
+    <button class="btn-primary" onclick="triggerScan()">手动触发扫描</button>
     <div class="status" id="status">加载中…</div>
   </div>
   <div class="meta" id="meta"></div>
+  <div style="margin-top:8px">
+    <a class="link" onclick="openTokenSetup()">设置 GitHub Token</a>
+    <a class="link" onclick="clearToken()">清除 Token</a>
+  </div>
 </div>
+
+<div class="modal-backdrop" id="token-modal">
+  <div class="modal">
+    <h3>设置 GitHub Token</h3>
+    <p>手动触发扫描需要一个 GitHub Personal Access Token（PAT），仅存在本浏览器 localStorage，不会上传到任何地方。</p>
+    <ol>
+      <li>打开 <a href="https://github.com/settings/tokens/new?scopes=workflow&description=a-stock-tail-scanner" target="_blank" style="color:#007aff">GitHub → 生成新 Token</a>（已预填 workflow scope）</li>
+      <li>Expiration 选 90 天或以上，Generate token</li>
+      <li>复制 token（ghp_ 开头）粘贴到下方</li>
+    </ol>
+    <input id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off" />
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeTokenSetup()">取消</button>
+      <button class="btn-primary" onclick="saveToken()">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <div class="card">
   <div id="results-container">
@@ -63,7 +105,77 @@
 </div>
 
 <script>
+const REPO_OWNER = 'houzidaye';
+const REPO_NAME = 'a-stock-tail-scanner';
+const WORKFLOW_FILE = 'scan.yml';
+const TOKEN_KEY = 'gh_pat_' + REPO_NAME;
+
 let indexData = null;
+
+function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+function removeToken() { localStorage.removeItem(TOKEN_KEY); }
+
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => { t.className = 'toast' + (isError ? ' error' : ''); }, 3500);
+}
+
+function openTokenSetup() {
+  document.getElementById('token-input').value = getToken();
+  document.getElementById('token-modal').classList.add('show');
+}
+function closeTokenSetup() {
+  document.getElementById('token-modal').classList.remove('show');
+}
+function saveToken() {
+  const v = document.getElementById('token-input').value.trim();
+  if (!v) { showToast('Token 不能为空', true); return; }
+  setToken(v);
+  closeTokenSetup();
+  showToast('Token 已保存到本地');
+}
+function clearToken() {
+  removeToken();
+  showToast('Token 已清除');
+}
+
+async function triggerScan() {
+  const token = getToken();
+  if (!token) {
+    showToast('请先设置 GitHub Token', true);
+    openTokenSetup();
+    return;
+  }
+  const btn = document.querySelector('.btn-primary');
+  btn.disabled = true; btn.textContent = '触发中…';
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': 'Bearer ' + token,
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ref: 'main' }),
+    });
+    if (r.status === 204) {
+      showToast('已触发扫描，约 1-2 分钟后点刷新');
+      btn.textContent = '已触发 · 稍后刷新';
+      setTimeout(() => { btn.disabled = false; btn.textContent = '手动触发扫描'; }, 8000);
+    } else {
+      const t = await r.text();
+      showToast(`触发失败 (${r.status}): ${t.slice(0, 100)}`, true);
+      btn.disabled = false; btn.textContent = '手动触发扫描';
+    }
+  } catch (e) {
+    showToast('触发失败: ' + e.message, true);
+    btn.disabled = false; btn.textContent = '手动触发扫描';
+  }
+}
 
 async function refresh() {
   document.getElementById('status').textContent = '加载中…';
