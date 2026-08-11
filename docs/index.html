@@ -168,7 +168,12 @@ async function triggerScan() {
       setTimeout(() => { btn.disabled = false; btn.textContent = '手动触发扫描'; }, 8000);
     } else {
       const t = await r.text();
-      showToast(`触发失败 (${r.status}): ${t.slice(0, 100)}`, true);
+      let hint = '';
+      if (r.status === 401) hint = ' · Token 无效或已过期，请重新生成';
+      else if (r.status === 403) hint = ' · Token 缺 workflow scope（Classic PAT）或缺 Actions: read+write 权限（Fine-grained PAT）';
+      else if (r.status === 404) hint = ' · 仓库不可见或 workflow 文件路径不对';
+      showToast(`触发失败 (${r.status})${hint}`, true);
+      console.error('GitHub API 响应:', t);
       btn.disabled = false; btn.textContent = '手动触发扫描';
     }
   } catch (e) {
