@@ -1,0 +1,125 @@
+{
+  "scan_time": "2026-08-19T15:24:09.709866",
+  "date": "2026-08-19",
+  "time_tag": "1524",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "603556",
+      "name": "海兴电力",
+      "gain_pct": 4.89,
+      "volume_ratio": 2.14,
+      "turnover": 5.89,
+      "float_mv_yi": 135.67,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.14x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=25.84/MA10=25.83/MA20=25.19"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价22min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "000025",
+      "name": "特  力Ａ",
+      "gain_pct": 4.05,
+      "volume_ratio": 5.02,
+      "turnover": 6.56,
+      "float_mv_yi": 61.63,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能5.02x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=15.09/MA10=15.11/MA20=14.87"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价237min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300046",
+      "name": "台基股份",
+      "gain_pct": 3.24,
+      "volume_ratio": 3.35,
+      "turnover": 7.53,
+      "float_mv_yi": 61.83,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能3.35x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=24.78/MA10=24.71/MA20=23.78"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价41min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300343",
+      "name": "联创股份",
+      "gain_pct": 3.25,
+      "volume_ratio": 2.53,
+      "turnover": 5.67,
+      "float_mv_yi": 64.26,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.53x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=6.02/MA10=6.07/MA20=5.94"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价31min/跑赢大盘87%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
