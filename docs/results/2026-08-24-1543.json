@@ -1,0 +1,320 @@
+{
+  "scan_time": "2026-08-24T15:43:31.463006",
+  "date": "2026-08-24",
+  "time_tag": "1543",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600759",
+      "name": "ST洲际",
+      "gain_pct": 4.65,
+      "volume_ratio": 1.64,
+      "turnover": 5.05,
+      "float_mv_yi": 111.88,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.64x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=2.53/MA10=2.51/MA20=2.43"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价24min/跑赢大盘78%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "601015",
+      "name": "陕西黑猫",
+      "gain_pct": 3.37,
+      "volume_ratio": 1.35,
+      "turnover": 6.48,
+      "float_mv_yi": 75.16,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.35x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=3.52/MA10=3.47/MA20=3.38"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价69min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "688228",
+      "name": "开普云",
+      "gain_pct": 3.7,
+      "volume_ratio": 1.45,
+      "turnover": 5.96,
+      "float_mv_yi": 55.69,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.45x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=77.58/MA10=77.03/MA20=72.11"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价247min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688652",
+      "name": "京仪装备",
+      "gain_pct": 3.55,
+      "volume_ratio": 1.16,
+      "turnover": 5.93,
+      "float_mv_yi": 179.41,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.16x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=151.25/MA10=153.01/MA20=144.48"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价210min/跑赢大盘16%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688726",
+      "name": "拉普拉斯",
+      "gain_pct": 4.0,
+      "volume_ratio": 1.99,
+      "turnover": 6.88,
+      "float_mv_yi": 103.41,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.99x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=46.05/MA10=45.38/MA20=43.56"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价164min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "000690",
+      "name": "宝新能源",
+      "gain_pct": 4.82,
+      "volume_ratio": 3.24,
+      "turnover": 6.42,
+      "float_mv_yi": 108.72,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能3.24x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=4.73/MA10=4.76/MA20=4.84"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价7min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "001280",
+      "name": "中国铀业",
+      "gain_pct": 3.83,
+      "volume_ratio": 1.72,
+      "turnover": 9.03,
+      "float_mv_yi": 120.91,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.72x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=67.67/MA10=66.21/MA20=64.47"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价244min/跑赢大盘6%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002125",
+      "name": "湘潭电化",
+      "gain_pct": 4.72,
+      "volume_ratio": 2.58,
+      "turnover": 7.73,
+      "float_mv_yi": 83.73,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.58x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=12.80/MA10=12.75/MA20=12.55"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价118min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002721",
+      "name": "金一文化",
+      "gain_pct": 4.4,
+      "volume_ratio": 1.76,
+      "turnover": 8.49,
+      "float_mv_yi": 75.79,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.76x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=2.63/MA10=2.75/MA20=2.64"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价10min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300602",
+      "name": "飞荣达",
+      "gain_pct": 3.73,
+      "volume_ratio": 1.33,
+      "turnover": 8.76,
+      "float_mv_yi": 172.99,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.33x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=41.69/MA10=39.50/MA20=36.92"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价256min/跑赢大盘70%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300868",
+      "name": "杰美特",
+      "gain_pct": 3.53,
+      "volume_ratio": 1.48,
+      "turnover": 5.58,
+      "float_mv_yi": 73.58,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.48x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=90.79/MA10=89.84/MA20=83.13"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价166min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
