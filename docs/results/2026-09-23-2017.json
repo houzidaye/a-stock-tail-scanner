@@ -1,0 +1,553 @@
+{
+  "scan_time": "2026-09-23T20:17:03.372204",
+  "date": "2026-09-23",
+  "time_tag": "2017",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "601133",
+      "name": "柏诚股份",
+      "gain_pct": 4.37,
+      "volume_ratio": 2.18,
+      "turnover": 5.78,
+      "float_mv_yi": 136.45,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.63x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=25.28/MA10=24.24/MA20=24.39"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价99min/跑赢大盘87%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "603216",
+      "name": "梦天家居",
+      "gain_pct": 3.43,
+      "volume_ratio": 2.62,
+      "turnover": 8.38,
+      "float_mv_yi": 52.4,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.93x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=21.42/MA10=22.04/MA20=22.11"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价179min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停3次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "603938",
+      "name": "三孚股份",
+      "gain_pct": 4.57,
+      "volume_ratio": 1.07,
+      "turnover": 8.36,
+      "float_mv_yi": 197.05,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.16x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=50.36/MA10=50.19/MA20=46.94"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价65min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "688028",
+      "name": "沃尔德",
+      "gain_pct": 4.77,
+      "volume_ratio": 1.24,
+      "turnover": 8.02,
+      "float_mv_yi": 196.45,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.20x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=125.87/MA10=122.75/MA20=111.91"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价147min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688105",
+      "name": "诺唯赞",
+      "gain_pct": 4.31,
+      "volume_ratio": 1.74,
+      "turnover": 5.95,
+      "float_mv_yi": 142.64,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.37x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=23.97/MA10=22.00/MA20=21.25"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价78min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688179",
+      "name": "阿拉丁",
+      "gain_pct": 4.46,
+      "volume_ratio": 1.69,
+      "turnover": 8.34,
+      "float_mv_yi": 87.54,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.36x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=21.97/MA10=20.46/MA20=20.01"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价6min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688323",
+      "name": "瑞华泰",
+      "gain_pct": 3.57,
+      "volume_ratio": 1.49,
+      "turnover": 6.85,
+      "float_mv_yi": 54.71,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.44x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=26.66/MA10=26.18/MA20=26.07"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价61min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688428",
+      "name": "诺诚健华",
+      "gain_pct": 4.38,
+      "volume_ratio": 1.73,
+      "turnover": 7.68,
+      "float_mv_yi": 91.32,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.42x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=30.60/MA10=29.41/MA20=29.51"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价8min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688515",
+      "name": "裕太微-U",
+      "gain_pct": 4.02,
+      "volume_ratio": 1.34,
+      "turnover": 6.95,
+      "float_mv_yi": 78.71,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.27x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=152.37/MA10=147.21/MA20=147.79"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价46min/跑赢大盘76%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "000555",
+      "name": "神州信息",
+      "gain_pct": 4.46,
+      "volume_ratio": 5.52,
+      "turnover": 5.86,
+      "float_mv_yi": 107.34,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.90x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=10.55/MA10=10.53/MA20=10.73"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价66min/跑赢大盘74%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "001696",
+      "name": "宗申动力",
+      "gain_pct": 3.21,
+      "volume_ratio": 1.97,
+      "turnover": 6.94,
+      "float_mv_yi": 146.39,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.68x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=15.70/MA10=15.55/MA20=15.78"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价4min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002026",
+      "name": "山东威达",
+      "gain_pct": 3.36,
+      "volume_ratio": 1.39,
+      "turnover": 5.19,
+      "float_mv_yi": 50.08,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.23x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=11.25/MA10=11.48/MA20=11.80"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价60min/跑赢大盘69%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002383",
+      "name": "合众思壮",
+      "gain_pct": 3.78,
+      "volume_ratio": 1.32,
+      "turnover": 7.78,
+      "float_mv_yi": 63.08,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.28x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=8.13/MA10=8.01/MA20=7.66"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价36min/跑赢大盘82%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "300358",
+      "name": "楚天科技",
+      "gain_pct": 4.75,
+      "volume_ratio": 2.12,
+      "turnover": 9.71,
+      "float_mv_yi": 68.37,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.54x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.99/MA10=8.53/MA20=8.60"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价10min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300473",
+      "name": "德尔股份",
+      "gain_pct": 4.18,
+      "volume_ratio": 1.07,
+      "turnover": 8.17,
+      "float_mv_yi": 55.78,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.04x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=33.38/MA10=31.08/MA20=29.09"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价59min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300587",
+      "name": "天铁科技",
+      "gain_pct": 3.42,
+      "volume_ratio": 2.61,
+      "turnover": 5.89,
+      "float_mv_yi": 54.1,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.93x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=4.81/MA10=4.73/MA20=4.82"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价8min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300619",
+      "name": "金银河",
+      "gain_pct": 3.61,
+      "volume_ratio": 2.09,
+      "turnover": 5.35,
+      "float_mv_yi": 51.85,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.77x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=26.34/MA10=26.26/MA20=26.49"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价36min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301188",
+      "name": "力诺药包",
+      "gain_pct": 4.45,
+      "volume_ratio": 1.37,
+      "turnover": 9.47,
+      "float_mv_yi": 98.61,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.17x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=35.12/MA10=33.65/MA20=34.58"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价248min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301310",
+      "name": "鑫宏业",
+      "gain_pct": 4.51,
+      "volume_ratio": 1.5,
+      "turnover": 7.17,
+      "float_mv_yi": 56.68,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.30x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=53.75/MA10=53.11/MA20=53.52"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价59min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
