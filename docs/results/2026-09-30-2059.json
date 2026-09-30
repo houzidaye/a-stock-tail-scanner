@@ -1,0 +1,266 @@
+{
+  "scan_time": "2026-09-30T20:59:55.929656",
+  "date": "2026-09-30",
+  "time_tag": "2059",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "601811",
+      "name": "新华文轩",
+      "gain_pct": 3.68,
+      "volume_ratio": 1.95,
+      "turnover": 7.26,
+      "float_mv_yi": 167.25,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.43x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=19.77/MA10=16.96/MA20=14.33"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价72min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停4次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "603657",
+      "name": "春光科技",
+      "gain_pct": 4.28,
+      "volume_ratio": 1.53,
+      "turnover": 6.24,
+      "float_mv_yi": 53.4,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.43x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=37.19/MA10=36.45/MA20=32.14"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价99min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "688202",
+      "name": "美迪西",
+      "gain_pct": 3.54,
+      "volume_ratio": 1.25,
+      "turnover": 6.01,
+      "float_mv_yi": 144.62,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.19x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=108.38/MA10=107.51/MA20=100.92"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价10min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688238",
+      "name": "和元生物",
+      "gain_pct": 3.63,
+      "volume_ratio": 1.06,
+      "turnover": 8.66,
+      "float_mv_yi": 57.3,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.03x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=8.63/MA10=7.87/MA20=7.17"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价134min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688685",
+      "name": "迈信林",
+      "gain_pct": 3.55,
+      "volume_ratio": 2.79,
+      "turnover": 9.11,
+      "float_mv_yi": 60.37,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.95x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=36.66/MA10=36.14/MA20=36.49"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价98min/跑赢大盘58%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "000523",
+      "name": "红棉股份",
+      "gain_pct": 4.1,
+      "volume_ratio": 1.29,
+      "turnover": 8.25,
+      "float_mv_yi": 59.23,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.30x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=3.27/MA10=3.34/MA20=3.54"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价25min/跑赢大盘85%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002531",
+      "name": "天顺风能",
+      "gain_pct": 4.45,
+      "volume_ratio": 1.26,
+      "turnover": 9.73,
+      "float_mv_yi": 142.59,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.17x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=7.60/MA10=7.68/MA20=7.16"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价87min/跑赢大盘64%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300182",
+      "name": "捷成股份",
+      "gain_pct": 3.55,
+      "volume_ratio": 2.0,
+      "turnover": 8.05,
+      "float_mv_yi": 126.77,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.72x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=5.04/MA10=5.04/MA20=5.10"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价48min/跑赢大盘67%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300438",
+      "name": "鹏辉能源",
+      "gain_pct": 3.02,
+      "volume_ratio": 1.49,
+      "turnover": 5.07,
+      "float_mv_yi": 198.32,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.35x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=48.57/MA10=50.12/MA20=51.80"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价8min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
