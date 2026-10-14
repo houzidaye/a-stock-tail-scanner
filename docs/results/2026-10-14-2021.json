@@ -1,0 +1,181 @@
+{
+  "scan_time": "2026-10-14T20:21:42.708329",
+  "date": "2026-10-14",
+  "time_tag": "2021",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600792",
+      "name": "云煤能源",
+      "gain_pct": 3.95,
+      "volume_ratio": 1.21,
+      "turnover": 9.71,
+      "float_mv_yi": 55.5,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.13x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=4.95/MA10=5.15/MA20=5.19"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价80min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停4次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "601566",
+      "name": "九牧王",
+      "gain_pct": 4.7,
+      "volume_ratio": 1.97,
+      "turnover": 9.65,
+      "float_mv_yi": 58.84,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.54x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=9.82/MA10=9.51/MA20=9.41"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价135min/跑赢大盘43%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "603124",
+      "name": "江南新材",
+      "gain_pct": 3.92,
+      "volume_ratio": 1.48,
+      "turnover": 9.4,
+      "float_mv_yi": 88.03,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.35x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=110.56/MA10=118.83/MA20=124.36"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价108min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "603861",
+      "name": "白云电器",
+      "gain_pct": 4.17,
+      "volume_ratio": 4.26,
+      "turnover": 5.05,
+      "float_mv_yi": 60.68,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.48x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=11.10/MA10=10.98/MA20=11.12"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价125min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300739",
+      "name": "明阳电路",
+      "gain_pct": 4.14,
+      "volume_ratio": 1.5,
+      "turnover": 7.53,
+      "float_mv_yi": 79.26,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.35x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=25.28/MA10=27.43/MA20=28.11"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价7min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300852",
+      "name": "四会富仕",
+      "gain_pct": 3.1,
+      "volume_ratio": 1.49,
+      "turnover": 9.11,
+      "float_mv_yi": 109.79,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.40x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=67.89/MA10=70.62/MA20=68.69"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价90min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
