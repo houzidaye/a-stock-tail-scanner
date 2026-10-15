@@ -1,0 +1,122 @@
+{
+  "scan_time": "2026-10-15T20:09:50.645247",
+  "date": "2026-10-15",
+  "time_tag": "2009",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600621",
+      "name": "华鑫股份",
+      "gain_pct": 3.14,
+      "volume_ratio": 1.56,
+      "turnover": 8.52,
+      "float_mv_yi": 163.59,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.23x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=14.88/MA10=14.17/MA20=13.80"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价68min/跑赢大盘89%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "603110",
+      "name": "东方材料",
+      "gain_pct": 3.6,
+      "volume_ratio": 1.9,
+      "turnover": 9.43,
+      "float_mv_yi": 50.33,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.59x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=24.25/MA10=24.37/MA20=24.51"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价57min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "603328",
+      "name": "依顿电子",
+      "gain_pct": 4.68,
+      "volume_ratio": 1.58,
+      "turnover": 9.01,
+      "float_mv_yi": 138.48,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.41x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=13.05/MA10=13.45/MA20=13.48"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价74min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停4次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "605299",
+      "name": "舒华体育",
+      "gain_pct": 3.67,
+      "volume_ratio": 4.07,
+      "turnover": 8.47,
+      "float_mv_yi": 52.91,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.41x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=12.52/MA10=12.43/MA20=12.35"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价81min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
