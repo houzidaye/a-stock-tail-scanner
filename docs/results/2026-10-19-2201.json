@@ -1,0 +1,241 @@
+{
+  "scan_time": "2026-10-19T22:01:30.447882",
+  "date": "2026-10-19",
+  "time_tag": "2201",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "603861",
+      "name": "白云电器",
+      "gain_pct": 4.66,
+      "volume_ratio": 1.95,
+      "turnover": 6.6,
+      "float_mv_yi": 65.28,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.50x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=11.58/MA10=11.25/MA20=11.17"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价57min/跑赢大盘78%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "000099",
+      "name": "中信海直",
+      "gain_pct": 3.39,
+      "volume_ratio": 3.21,
+      "turnover": 9.89,
+      "float_mv_yi": 118.3,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.12x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=14.06/MA10=13.42/MA20=13.20"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价198min/跑赢大盘64%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "000815",
+      "name": "美利云",
+      "gain_pct": 4.36,
+      "volume_ratio": 1.26,
+      "turnover": 7.94,
+      "float_mv_yi": 101.51,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.07x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=14.30/MA10=14.22/MA20=14.84"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价115min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300065",
+      "name": "海兰信",
+      "gain_pct": 4.26,
+      "volume_ratio": 1.94,
+      "turnover": 6.81,
+      "float_mv_yi": 96.4,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.56x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=14.03/MA10=14.18/MA20=14.83"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价61min/跑赢大盘67%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300067",
+      "name": "安诺其",
+      "gain_pct": 4.33,
+      "volume_ratio": 1.13,
+      "turnover": 8.61,
+      "float_mv_yi": 51.94,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能0.97x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=5.49/MA10=5.37/MA20=5.32"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价53min/跑赢大盘76%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300302",
+      "name": "同有科技",
+      "gain_pct": 3.74,
+      "volume_ratio": 2.33,
+      "turnover": 7.32,
+      "float_mv_yi": 85.58,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.79x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=22.98/MA10=24.08/MA20=26.06"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价155min/跑赢大盘76%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300773",
+      "name": "拉卡拉",
+      "gain_pct": 4.52,
+      "volume_ratio": 3.93,
+      "turnover": 7.61,
+      "float_mv_yi": 154.6,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能5.00x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=14.51/MA10=14.45/MA20=14.68"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价211min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301234",
+      "name": "五洲医疗",
+      "gain_pct": 3.85,
+      "volume_ratio": 1.01,
+      "turnover": 6.3,
+      "float_mv_yi": 51.29,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.02x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=135.75/MA10=139.95/MA20=128.63"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价4min/跑赢大盘90%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    }
+  ]
+}
