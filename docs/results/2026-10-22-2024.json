@@ -1,0 +1,157 @@
+{
+  "scan_time": "2026-10-22T20:24:16.441428",
+  "date": "2026-10-22",
+  "time_tag": "2024",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "920186",
+      "name": "中科仪",
+      "fail_at": "history_fetch"
+    },
+    {
+      "code": "600621",
+      "name": "华鑫股份",
+      "gain_pct": 3.02,
+      "volume_ratio": 1.28,
+      "turnover": 6.27,
+      "float_mv_yi": 152.13,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.40x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=14.35/MA10=14.61/MA20=14.14"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价91min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "000420",
+      "name": "吉林化纤",
+      "gain_pct": 3.11,
+      "volume_ratio": 1.4,
+      "turnover": 7.97,
+      "float_mv_yi": 97.86,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.19x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=3.89/MA10=3.79/MA20=3.65"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价29min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "000948",
+      "name": "南天信息",
+      "gain_pct": 5.0,
+      "volume_ratio": 5.45,
+      "turnover": 7.68,
+      "float_mv_yi": 55.52,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.86x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=13.59/MA10=13.53/MA20=13.41"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价112min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002077",
+      "name": "大港股份",
+      "gain_pct": 3.03,
+      "volume_ratio": 2.28,
+      "turnover": 6.86,
+      "float_mv_yi": 69.0,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.84x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=11.60/MA10=12.09/MA20=13.13"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价164min/跑赢大盘42%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300842",
+      "name": "帝科股份",
+      "gain_pct": 3.58,
+      "volume_ratio": 2.08,
+      "turnover": 6.9,
+      "float_mv_yi": 70.97,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.69x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=51.25/MA10=51.35/MA20=57.04"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价126min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
