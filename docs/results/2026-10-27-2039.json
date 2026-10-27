@@ -1,0 +1,183 @@
+{
+  "scan_time": "2026-10-27T20:39:38.764359",
+  "date": "2026-10-27",
+  "time_tag": "2039",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600617",
+      "name": "国新能源",
+      "gain_pct": 4.82,
+      "volume_ratio": 3.19,
+      "turnover": 6.81,
+      "float_mv_yi": 57.88,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.20x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=3.18/MA10=3.31/MA20=3.38"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价224min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002635",
+      "name": "安洁科技",
+      "gain_pct": 3.61,
+      "volume_ratio": 2.61,
+      "turnover": 9.83,
+      "float_mv_yi": 52.25,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.01x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=13.02/MA10=12.87/MA20=13.70"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价250min/跑赢大盘46%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "gain_pct": 3.2,
+      "volume_ratio": 2.38,
+      "turnover": 9.89,
+      "float_mv_yi": 79.17,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.89x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=18.42/MA10=19.02/MA20=21.98"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价198min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300133",
+      "name": "华策影视",
+      "gain_pct": 3.84,
+      "volume_ratio": 1.4,
+      "turnover": 8.33,
+      "float_mv_yi": 148.43,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.27x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.84/MA10=9.05/MA20=8.50"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价132min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300398",
+      "name": "飞凯材料",
+      "gain_pct": 3.8,
+      "volume_ratio": 2.41,
+      "turnover": 9.17,
+      "float_mv_yi": 153.38,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.90x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=27.01/MA10=27.29/MA20=30.65"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价219min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301196",
+      "name": "唯科科技",
+      "gain_pct": 4.82,
+      "volume_ratio": 1.1,
+      "turnover": 8.65,
+      "float_mv_yi": 93.98,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.09x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=86.97/MA10=84.77/MA20=84.11"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价143min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
