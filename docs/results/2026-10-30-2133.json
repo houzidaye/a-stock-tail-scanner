@@ -1,0 +1,269 @@
+{
+  "scan_time": "2026-10-30T21:33:09.487890",
+  "date": "2026-10-30",
+  "time_tag": "2133",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "603619",
+      "name": "中曼石油",
+      "gain_pct": 3.43,
+      "volume_ratio": 1.45,
+      "turnover": 5.28,
+      "float_mv_yi": 96.07,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.36x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=20.59/MA10=20.43/MA20=20.57"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价4min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "605006",
+      "name": "山东玻纤",
+      "gain_pct": 4.45,
+      "volume_ratio": 1.68,
+      "turnover": 8.18,
+      "float_mv_yi": 87.52,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.42x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=12.73/MA10=12.74/MA20=13.23"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价24min/跑赢大盘83%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002029",
+      "name": "七 匹 狼",
+      "gain_pct": 4.66,
+      "volume_ratio": 1.25,
+      "turnover": 8.92,
+      "float_mv_yi": 56.83,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.24x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.13/MA10=8.26/MA20=8.85"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价48min/跑赢大盘80%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002324",
+      "name": "普利特",
+      "gain_pct": 3.34,
+      "volume_ratio": 2.93,
+      "turnover": 6.39,
+      "float_mv_yi": 62.41,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.19x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.00/MA10=8.09/MA20=8.29"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价113min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002510",
+      "name": "天汽模",
+      "gain_pct": 3.64,
+      "volume_ratio": 1.55,
+      "turnover": 6.04,
+      "float_mv_yi": 60.7,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.48x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=5.84/MA10=5.90/MA20=5.75"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价59min/跑赢大盘52%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300041",
+      "name": "回天新材",
+      "gain_pct": 4.51,
+      "volume_ratio": 3.79,
+      "turnover": 5.57,
+      "float_mv_yi": 53.03,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.62x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=9.47/MA10=9.58/MA20=9.95"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价64min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300769",
+      "name": "德方纳米",
+      "gain_pct": 3.24,
+      "volume_ratio": 1.69,
+      "turnover": 6.76,
+      "float_mv_yi": 84.35,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.63x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=33.52/MA10=34.08/MA20=37.16"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价120min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300806",
+      "name": "斯迪克",
+      "gain_pct": 4.35,
+      "volume_ratio": 1.56,
+      "turnover": 9.33,
+      "float_mv_yi": 192.51,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.36x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=40.21/MA10=39.09/MA20=41.64"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价16min/跑赢大盘89%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "301069",
+      "name": "凯盛新材",
+      "gain_pct": 3.18,
+      "volume_ratio": 1.38,
+      "turnover": 5.05,
+      "float_mv_yi": 76.05,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.29x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=17.09/MA10=17.26/MA20=16.64"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价87min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
