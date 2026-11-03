@@ -1,0 +1,213 @@
+{
+  "scan_time": "2026-11-03T22:39:07.565931",
+  "date": "2026-11-03",
+  "time_tag": "2239",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600593",
+      "name": "大连圣亚",
+      "gain_pct": 3.99,
+      "volume_ratio": 1.19,
+      "turnover": 7.83,
+      "float_mv_yi": 54.03,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.12x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=40.64/MA10=40.59/MA20=44.04"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价11min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "688275",
+      "name": "万润新能",
+      "gain_pct": 3.0,
+      "volume_ratio": 1.9,
+      "turnover": 5.06,
+      "float_mv_yi": 59.62,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.51x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=50.60/MA10=52.79/MA20=58.35"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价149min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002531",
+      "name": "天顺风能",
+      "gain_pct": 4.92,
+      "volume_ratio": 1.6,
+      "turnover": 7.83,
+      "float_mv_yi": 133.3,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.31x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=7.02/MA10=6.82/MA20=7.21"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价25min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停3次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300118",
+      "name": "东方日升",
+      "gain_pct": 4.26,
+      "volume_ratio": 2.91,
+      "turnover": 9.58,
+      "float_mv_yi": 74.77,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.06x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=7.89/MA10=8.05/MA20=8.29"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价200min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300740",
+      "name": "水羊股份",
+      "gain_pct": 3.67,
+      "volume_ratio": 1.09,
+      "turnover": 9.62,
+      "float_mv_yi": 72.84,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.07x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=17.46/MA10=17.55/MA20=19.24"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价104min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301069",
+      "name": "凯盛新材",
+      "gain_pct": 3.93,
+      "volume_ratio": 1.32,
+      "turnover": 5.26,
+      "float_mv_yi": 77.84,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.18x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=17.66/MA10=17.36/MA20=16.89"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价95min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "301291",
+      "name": "明阳电气",
+      "gain_pct": 4.27,
+      "volume_ratio": 2.21,
+      "turnover": 6.81,
+      "float_mv_yi": 64.61,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.68x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=36.82/MA10=36.88/MA20=36.14"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价32min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
