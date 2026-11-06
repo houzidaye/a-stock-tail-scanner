@@ -1,0 +1,184 @@
+{
+  "scan_time": "2026-11-06T22:36:22.315039",
+  "date": "2026-11-06",
+  "time_tag": "2236",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "688135",
+      "name": "利扬芯片",
+      "gain_pct": 3.13,
+      "volume_ratio": 1.14,
+      "turnover": 7.11,
+      "float_mv_yi": 66.04,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.07x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=26.77/MA10=26.79/MA20=29.34"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价17min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "688678",
+      "name": "福立旺",
+      "gain_pct": 3.48,
+      "volume_ratio": 1.43,
+      "turnover": 9.98,
+      "float_mv_yi": 82.8,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.36x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=19.01/MA10=19.95/MA20=22.58"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价16min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "000722",
+      "name": "湖南发展",
+      "gain_pct": 3.69,
+      "volume_ratio": 2.79,
+      "turnover": 7.25,
+      "float_mv_yi": 57.42,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.00x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=11.80/MA10=11.73/MA20=12.21"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价14min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002488",
+      "name": "金固股份",
+      "gain_pct": 4.94,
+      "volume_ratio": 2.01,
+      "turnover": 6.83,
+      "float_mv_yi": 62.57,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.70x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=6.30/MA10=6.36/MA20=6.70"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价55min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002611",
+      "name": "东方精工",
+      "gain_pct": 3.96,
+      "volume_ratio": 2.14,
+      "turnover": 5.82,
+      "float_mv_yi": 139.65,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.82x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=13.29/MA10=13.43/MA20=13.25"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价4min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300010",
+      "name": "ST豆神",
+      "gain_pct": 4.06,
+      "volume_ratio": 1.06,
+      "turnover": 8.58,
+      "float_mv_yi": 71.36,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能0.97x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=3.87/MA10=3.38/MA20=3.63"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价6min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    }
+  ]
+}
