@@ -1,0 +1,124 @@
+{
+  "scan_time": "2026-11-12T23:35:28.402027",
+  "date": "2026-11-12",
+  "time_tag": "2335",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600410",
+      "name": "华胜天成",
+      "gain_pct": 4.0,
+      "volume_ratio": 1.37,
+      "turnover": 9.9,
+      "float_mv_yi": 142.54,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.22x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=12.63/MA10=12.02/MA20=12.13"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价48min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "600698",
+      "name": "湖南天雁",
+      "gain_pct": 4.23,
+      "volume_ratio": 2.08,
+      "turnover": 9.02,
+      "float_mv_yi": 61.45,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.84x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=7.12/MA10=6.94/MA20=7.09"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价117min/跑赢大盘64%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "688115",
+      "name": "思林杰",
+      "gain_pct": 3.71,
+      "volume_ratio": 1.76,
+      "turnover": 5.24,
+      "float_mv_yi": 50.39,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.55x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=50.75/MA10=50.35/MA20=50.17"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价196min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002685",
+      "name": "华东重机",
+      "gain_pct": 4.78,
+      "volume_ratio": 4.14,
+      "turnover": 8.59,
+      "float_mv_yi": 50.78,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.48x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=4.80/MA10=4.68/MA20=4.74"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价99min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
