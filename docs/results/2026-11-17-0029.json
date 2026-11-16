@@ -1,0 +1,93 @@
+{
+  "scan_time": "2026-11-17T00:29:10.023481",
+  "date": "2026-11-17",
+  "time_tag": "0029",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "603906",
+      "name": "龙蟠科技",
+      "gain_pct": 3.07,
+      "volume_ratio": 1.67,
+      "turnover": 6.47,
+      "float_mv_yi": 94.74,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.45x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=14.70/MA10=15.07/MA20=14.93"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价145min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002324",
+      "name": "普利特",
+      "gain_pct": 3.22,
+      "volume_ratio": 1.24,
+      "turnover": 9.04,
+      "float_mv_yi": 72.19,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.03x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=9.20/MA10=8.71/MA20=8.40"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价191min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "301069",
+      "name": "凯盛新材",
+      "gain_pct": 3.48,
+      "volume_ratio": 2.02,
+      "turnover": 7.52,
+      "float_mv_yi": 83.82,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.59x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=18.39/MA10=18.29/MA20=17.78"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价52min/跑赢大盘86%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
