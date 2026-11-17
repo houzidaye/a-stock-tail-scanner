@@ -1,0 +1,269 @@
+{
+  "scan_time": "2026-11-18T00:28:26.608696",
+  "date": "2026-11-18",
+  "time_tag": "0028",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "688371",
+      "name": "菲沃泰",
+      "gain_pct": 4.83,
+      "volume_ratio": 1.35,
+      "turnover": 7.35,
+      "float_mv_yi": 72.09,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.20x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=21.31/MA10=19.17/MA20=17.68"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价114min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "001314",
+      "name": "亿道信息",
+      "gain_pct": 3.93,
+      "volume_ratio": 1.09,
+      "turnover": 6.27,
+      "float_mv_yi": 52.12,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.04x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=41.74/MA10=40.38/MA20=40.32"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价17min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "002042",
+      "name": "华孚时尚",
+      "gain_pct": 4.35,
+      "volume_ratio": 1.76,
+      "turnover": 6.13,
+      "float_mv_yi": 61.22,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.37x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=3.46/MA10=3.40/MA20=3.34"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价160min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑦"
+      ]
+    },
+    {
+      "code": "002119",
+      "name": "康强电子",
+      "gain_pct": 3.33,
+      "volume_ratio": 1.22,
+      "turnover": 8.31,
+      "float_mv_yi": 69.8,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.15x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=18.78/MA10=18.80/MA20=19.15"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价45min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002452",
+      "name": "长高电气",
+      "gain_pct": 4.3,
+      "volume_ratio": 2.52,
+      "turnover": 6.74,
+      "float_mv_yi": 54.02,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.83x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=9.81/MA10=9.76/MA20=9.61"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价13min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "002971",
+      "name": "和远气体",
+      "gain_pct": 3.02,
+      "volume_ratio": 1.32,
+      "turnover": 5.72,
+      "float_mv_yi": 54.44,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.20x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=34.30/MA10=34.53/MA20=33.79"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价134min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300192",
+      "name": "科德教育",
+      "gain_pct": 4.44,
+      "volume_ratio": 1.1,
+      "turnover": 5.97,
+      "float_mv_yi": 77.15,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.07x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=17.58/MA10=17.81/MA20=18.24"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价6min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300260",
+      "name": "新莱应材",
+      "gain_pct": 3.91,
+      "volume_ratio": 1.54,
+      "turnover": 9.53,
+      "float_mv_yi": 131.39,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.37x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=45.91/MA10=45.82/MA20=44.32"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价111min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300398",
+      "name": "飞凯材料",
+      "gain_pct": 4.55,
+      "volume_ratio": 1.03,
+      "turnover": 5.93,
+      "float_mv_yi": 164.72,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.07x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=29.30/MA10=29.48/MA20=28.30"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价21min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
