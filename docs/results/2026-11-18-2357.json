@@ -1,0 +1,67 @@
+{
+  "scan_time": "2026-11-18T23:57:46.682520",
+  "date": "2026-11-18",
+  "time_tag": "2357",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "000034",
+      "name": "神州数码",
+      "gain_pct": 4.21,
+      "volume_ratio": 1.76,
+      "turnover": 5.74,
+      "float_mv_yi": 195.3,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.38x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=21.83/MA10=21.47/MA20=21.08"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价10min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "300047",
+      "name": "天源迪科",
+      "gain_pct": 4.41,
+      "volume_ratio": 2.76,
+      "turnover": 8.12,
+      "float_mv_yi": 50.86,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能2.13x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.41/MA10=8.44/MA20=8.42"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价51min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
