@@ -1,0 +1,66 @@
+{
+  "scan_time": "2026-11-20T23:45:15.735563",
+  "date": "2026-11-20",
+  "time_tag": "2345",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "300788",
+      "name": "中信出版",
+      "gain_pct": 3.61,
+      "volume_ratio": 1.49,
+      "turnover": 7.01,
+      "float_mv_yi": 54.61,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.43x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=29.76/MA10=32.63/MA20=31.58"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价20min/跑赢大盘67%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300903",
+      "name": "科翔股份",
+      "gain_pct": 3.63,
+      "volume_ratio": 1.14,
+      "turnover": 8.2,
+      "float_mv_yi": 196.6,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.24x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=55.61/MA10=62.98/MA20=66.60"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价38min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
