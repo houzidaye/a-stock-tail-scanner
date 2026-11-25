@@ -1,0 +1,93 @@
+{
+  "scan_time": "2026-11-26T01:37:08.762892",
+  "date": "2026-11-26",
+  "time_tag": "0137",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "002042",
+      "name": "华孚时尚",
+      "gain_pct": 3.91,
+      "volume_ratio": 1.15,
+      "turnover": 9.3,
+      "float_mv_yi": 67.86,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.17x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=3.85/MA10=3.72/MA20=3.50"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价21min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停2次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑦"
+      ]
+    },
+    {
+      "code": "003033",
+      "name": "征和工业",
+      "gain_pct": 3.53,
+      "volume_ratio": 1.94,
+      "turnover": 6.25,
+      "float_mv_yi": 51.76,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.60x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=58.36/MA10=63.98/MA20=70.67"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价197min/强于大盘"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停3次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "300197",
+      "name": "节能铁汉",
+      "gain_pct": 3.68,
+      "volume_ratio": 1.55,
+      "turnover": 5.1,
+      "float_mv_yi": 58.41,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.37x"
+      },
+      "rule_6": {
+        "pass": true,
+        "msg": "MA5=1.90/MA10=1.86/MA20=1.84"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价89min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
