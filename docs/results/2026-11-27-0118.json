@@ -1,0 +1,156 @@
+{
+  "scan_time": "2026-11-27T01:18:29.506844",
+  "date": "2026-11-27",
+  "time_tag": "0118",
+  "count": 0,
+  "results": [],
+  "diagnostics": [
+    {
+      "code": "600189",
+      "name": "泉阳泉",
+      "gain_pct": 3.9,
+      "volume_ratio": 1.39,
+      "turnover": 8.54,
+      "float_mv_yi": 64.73,
+      "rule_5": {
+        "pass": true,
+        "msg": "量能1.25x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=8.43/MA10=8.38/MA20=8.64"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价205min/跑赢大盘6%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停3次"
+      },
+      "fail_at": [
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "603936",
+      "name": "博敏电子",
+      "gain_pct": 4.36,
+      "volume_ratio": 1.03,
+      "turnover": 7.93,
+      "float_mv_yi": 72.43,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能0.95x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=11.54/MA10=11.81/MA20=12.32"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价110min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "000560",
+      "name": "我爱我家",
+      "gain_pct": 3.0,
+      "volume_ratio": 1.22,
+      "turnover": 6.64,
+      "float_mv_yi": 56.22,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.15x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=2.35/MA10=2.46/MA20=2.69"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价35min/强于大盘"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    },
+    {
+      "code": "001389",
+      "name": "广合科技",
+      "gain_pct": 3.61,
+      "volume_ratio": 1.18,
+      "turnover": 7.28,
+      "float_mv_yi": 125.49,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能1.09x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=80.83/MA10=82.38/MA20=86.11"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价196min/跑赢大盘79%"
+      },
+      "rule_8": {
+        "pass": true,
+        "msg": "20日实体涨停1次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦"
+      ]
+    },
+    {
+      "code": "301176",
+      "name": "逸豪新材",
+      "gain_pct": 3.32,
+      "volume_ratio": 1.05,
+      "turnover": 8.55,
+      "float_mv_yi": 55.19,
+      "rule_5": {
+        "pass": false,
+        "msg": "量能0.91x"
+      },
+      "rule_6": {
+        "pass": false,
+        "msg": "MA5=35.15/MA10=34.56/MA20=36.25"
+      },
+      "rule_7": {
+        "pass": false,
+        "msg": "破均价188min/跑赢大盘66%"
+      },
+      "rule_8": {
+        "pass": false,
+        "msg": "20日实体涨停0次"
+      },
+      "fail_at": [
+        "⑤",
+        "⑥",
+        "⑦",
+        "⑧"
+      ]
+    }
+  ]
+}
